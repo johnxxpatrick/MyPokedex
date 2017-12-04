@@ -9,6 +9,7 @@
 .Pokedex-LOGO {
     margin-top: -10px;
     height: 80px;
+
 }
 
 .Pikachu-LOGO {
@@ -16,6 +17,7 @@
     margin-top: -28px;
     margin-left: 100px;
     height: 80px;
+
 }
 
 
@@ -56,6 +58,7 @@
 }
 
 .PokemonDetails-Container{
+
     border-radius: 5px;
     margin-top: -390px;
     margin-left: 380px;
@@ -78,16 +81,55 @@
 margin-top: 250px;
 }
 .PokemonSprites{
-  margin-top: 10px;
-  width: 150px;
-  height: 150px;
-  background-color: white;
-  border-radius: 100px;
+  position: absolute;
+  margin-top: 22px;
+  border: none;
+  margin-left: -48px;
 }
 .PokemonName{
-  color: white;
+  position: absolute;
+  color: black;
   text-transform: uppercase;
+  font-size: 25px;
+  margin-top: 65px;
+  margin-left: 197px;
+  text-align: center;
+}
 
+.PokemonPicture-Container{
+    background-color: black;
+    position: absolute;
+    border-radius: 100px;
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    margin-left: 240px;
+    background-color: white;
+    z-index: 1000;
+}
+#arcs div {
+    margin-top: 5px;
+    margin-left: -92px;
+    position: absolute;
+    border: 3px solid white;
+    display: inline-block;
+    min-width: 10em;
+    min-height: 10em;
+    padding: 0.5em;
+    border-radius: 50%;
+
+    z-index: 1000;
+
+}
+.PokemonProfile{
+  position: absolute;
+  border-radius: 5px;
+  background-color: white;
+  margin-top: 120px;
+  margin-left: 40px;
+  width: 550px;
+  height: 400px;
+  opacity: 0.8;
 }
 .select-type-pokemon {
  width: 200px;
@@ -203,12 +245,14 @@ body {
 #title {
 	background-color:transparent;
 	border-bottom:3px solid #FFF;
-	color:#FFF;
+	color:  #999999;
 	font-size:20px;
 	font-family:Courier, monospace;
 	height:28px;
 	font-weight:bold;
 	width:220px;
+  text-align: center;
+  text-transform: uppercase;
 }
 #searchpokemon {
 	background-color:transparent;
@@ -259,3 +303,128 @@ body {
 	margin-top:24px;
 	margin-bottom:100px;
 }
+h3{
+  color: black;
+  margin-top: 110px;
+}
+.meter {
+
+			height: 15px;  /* Can be anything */
+			position: relative;
+      width: 50%;
+      margin-top: 90px;
+			margin-left: 130px;
+			background: #555;
+			-moz-border-radius: 20px;
+			-webkit-border-radius: 20px;
+			border-radius: 20px;
+			padding: 5px;
+			-webkit-box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+			-moz-box-shadow   : inset 0 -1px 1px rgba(255,255,255,0.3);
+			box-shadow        : inset 0 -1px 1px rgba(255,255,255,0.3);
+		}
+		.meter > span {
+			display: block;
+			height: 100%;
+			   -webkit-border-top-right-radius: 8px;
+			-webkit-border-bottom-right-radius: 8px;
+			       -moz-border-radius-topright: 8px;
+			    -moz-border-radius-bottomright: 8px;
+			           border-top-right-radius: 8px;
+			        border-bottom-right-radius: 8px;
+			    -webkit-border-top-left-radius: 20px;
+			 -webkit-border-bottom-left-radius: 20px;
+			        -moz-border-radius-topleft: 20px;
+			     -moz-border-radius-bottomleft: 20px;
+			            border-top-left-radius: 20px;
+			         border-bottom-left-radius: 20px;
+			background-color: rgb(43,194,83);
+			background-image: -webkit-gradient(
+			  linear,
+			  left bottom,
+			  left top,
+			  color-stop(0, rgb(43,194,83)),
+			  color-stop(1, rgb(84,240,84))
+			 );
+			background-image: -moz-linear-gradient(
+			  center bottom,
+			  rgb(43,194,83) 37%,
+			  rgb(84,240,84) 69%
+			 );
+			-webkit-box-shadow:
+			  inset 0 2px 9px  rgba(255,255,255,0.3),
+			  inset 0 -2px 6px rgba(0,0,0,0.4);
+			-moz-box-shadow:
+			  inset 0 2px 9px  rgba(255,255,255,0.3),
+			  inset 0 -2px 6px rgba(0,0,0,0.4);
+			box-shadow:
+			  inset 0 2px 9px  rgba(255,255,255,0.3),
+			  inset 0 -2px 6px rgba(0,0,0,0.4);
+			position: relative;
+			overflow: hidden;
+		}
+		.meter > span:after, .animate > span > span {
+			content: "";
+			position: absolute;
+			top: 0; left: 0; bottom: 0; right: 0;
+			background-image:
+      -webkit-gradient(linear, 0 0, 100% 100%,
+         color-stop(.25, rgba(255, 255, 255, .2)),
+         color-stop(.25, transparent), color-stop(.5, transparent),
+         color-stop(.5, rgba(255, 255, 255, .2)),
+         color-stop(.75, rgba(255, 255, 255, .2)),
+         color-stop(.75, transparent), to(transparent)
+      );
+			background-image:
+				-moz-linear-gradient(
+				  -45deg,
+			      rgba(255, 255, 255, .2) 25%,
+			      transparent 25%,
+			      transparent 50%,
+			      rgba(255, 255, 255, .2) 50%,
+			      rgba(255, 255, 255, .2) 75%,
+			      transparent 75%,
+			      transparent
+			   );
+			z-index: 1;
+			-webkit-background-size: 45px 45px;
+			-moz-background-size: 45px 45px;
+			background-size: 45px 45px;
+			-webkit-animation: move 2s linear infinite;
+			-moz-animation: move 2s linear infinite;
+			   -webkit-border-top-right-radius: 8px;
+			-webkit-border-bottom-right-radius: 8px;
+			       -moz-border-radius-topright: 8px;
+			    -moz-border-radius-bottomright: 8px;
+			           border-top-right-radius: 8px;
+			        border-bottom-right-radius: 8px;
+			    -webkit-border-top-left-radius: 20px;
+			 -webkit-border-bottom-left-radius: 20px;
+			        -moz-border-radius-topleft: 20px;
+			     -moz-border-radius-bottomleft: 20px;
+			            border-top-left-radius: 20px;
+			         border-bottom-left-radius: 20px;
+			overflow: hidden;
+		}
+
+		.animate > span:after {
+			display: none;
+		}
+
+		@-webkit-keyframes move {
+		    0% {
+		       background-position: 0 0;
+		    }
+		    100% {
+		       background-position: 45px 45px;
+		    }
+		}
+
+		@-moz-keyframes move {
+		    0% {
+		       background-position: 0 0;
+		    }
+		    100% {
+		       background-position: 45px 45px;
+		    }
+		}

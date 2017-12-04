@@ -29,9 +29,9 @@ class App extends Component {
       .end(function(err, res){
         if(err) alert('error')
         that.setState({ details: res.body })
-     })
-  }
 
+   })
+  }
   render() {
     console.log(this.state)
     return (
@@ -46,15 +46,13 @@ class App extends Component {
               <div className="PokemonSearch-Container col-md-5">
                   <div className="select-type-pokemon-wrapper">
                       <div className="searchmargin">SEARCH POKEMON:
-                          <input id="searchpokemon" onChange={this.handleChange.bind(this)}
-                          placeholder="Search..." type="text" name="title" style={{color:'black'}}/>
+                          <input id="title" onChange={this.handleChange.bind(this)}
+                          placeholder="Search Here..." type="text" name="title" />
                       </div>
                   </div>
-
                           <input id="button" type="submit" value="SEARCH"
                               onClick={this.handleSearch.bind(this)}/>
                   <PokemonDetails details={this.state.details}/>
-
                   <PokemonNotes notes={this.state.details}/>
               </div>
           </div>
