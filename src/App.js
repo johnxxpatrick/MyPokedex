@@ -7,6 +7,7 @@ import './App.css'
 import PokemonDetails from './components/PokemonDetails'
 import PokemonNotes from './components/PokemonNotes'
 import pokedexx from './images/pokedex.png'
+import evolution from './images/pokemonevolution.gif'
 
 
 
@@ -43,15 +44,20 @@ class App extends Component {
           </h1>
         </header>
           <div className="PokemonMain-Conatiner col-md-12">
+            <img src={evolution} className="PokemonEvolution" alt="evolution" />
               <div className="PokemonSearch-Container col-md-5">
-                  <div className="select-type-pokemon-wrapper">
-                      <div className="searchmargin">SEARCH POKEMON:
-                          <input id="title" onChange={this.handleChange.bind(this)}
-                          placeholder="Search Here..." type="text" name="title" />
-                      </div>
+                  <div className="select-type-pokemon-wrapper"> .
+                  <div className="field">
+                    <input type="text" placeholder="Enter Keyword"
+                    onChange={this.handleChange.bind(this)} />
                   </div>
-                          <input id="button" type="submit" value="SEARCH"
-                              onClick={this.handleSearch.bind(this)}/>
+              </div>
+                  <div className="btnSearch-Container">
+                  	<div className="btn" onClick={this.handleSearch.bind(this)} >
+                  		<span>SEARCH</span>
+                  		<div className="dot"></div>
+                  	</div>
+                  </div>
                   <PokemonDetails details={this.state.details}/>
                   <PokemonNotes notes={this.state.details}/>
               </div>
