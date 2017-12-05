@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import request from 'superagent'
 import '../App.css'
 import { App } from '../App'
+import pokeball from '../images/pokeball.gif'
 
 class PokemonDetails extends Component {
   state = { result: {} }
@@ -60,11 +61,9 @@ return move
       }
     }
 
-
-
   render() {
     const { sprites,abilities,moves,name,types,height,weight,id,hp,stats,base_stat,base_experience } = this.state.result
-    const img = !sprites ? '' : sprites.front_default
+    const img = !sprites ? '': sprites.front_default
     console.log(this.props, 'state: ', this.state)
     return (
       <div className="PokemonDetails-Container col-md-8">

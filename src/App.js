@@ -14,11 +14,23 @@ import evolution from './images/pokemonevolution.gif'
 class App extends Component {
   state = {
     search: '',
-    details: {}
+    details: {},
+    note: '',
+    notes: []
   }
-
-  handleChange(e){
-    this.setState({ search: e.target.value})
+  handleSave(e){
+    var obj ={
+      id : this.state.details.id,
+      note : this.state.note
+    }
+    this.setState({
+      notes : this.state.notes.concat(obj),
+      note : '' })
+      const {details, note,notes} =this.state
+  }
+  handleChange(prop,e){
+    console.log(prop)
+    this.setState({ [prop]: e.target.value})
   }
 
   handleSearch(){
@@ -49,17 +61,19 @@ class App extends Component {
                   <div className="select-type-pokemon-wrapper"> .
                   <div className="field">
                     <input type="text" placeholder="Enter Keyword"
-                    onChange={this.handleChange.bind(this)} />
+                    onChange={this.handleChange.bind(this , 'search')} />
                   </div>
               </div>
                   <div className="btnSearch-Container">
-                  	<div className="btn" onClick={this.handleSearch.bind(this)} >
+                  	<div className="btn" onClick={this.handleSearch.bind(this, 'note')} >
                   		<span>SEARCH</span>
                   		<div className="dot"></div>
                   	</div>
                   </div>
+
                   <PokemonDetails details={this.state.details}/>
-                  <PokemonNotes notes={this.state.details}/>
+                  <PokemonNotes notes={this.state.notes} save={this.handleSave}/>
+
               </div>
           </div>
       </div>
