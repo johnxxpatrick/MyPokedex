@@ -83,7 +83,7 @@ return move
             </div>
         <section>
           <div className="tbl-header">
-            <table cellpadding="0" cellspacing="0" border="0">
+            <table cellPadding="0" cellSpacing="0" border="0">
               <thead>
                 <tr>
                  <th><a className="naming">TYPE</a>{this.pokemonTypes(types)}</th>
@@ -96,7 +96,7 @@ return move
         </section>
         <section>
           <div className="tbl-header2">
-            <table cellpadding="0" cellspacing="0" border="0">
+            <table cellPadding="0" cellSpacing="0" border="0">
               <thead>
                 <tr>
                   <th><a className="naming">BASE STATS:</a>
@@ -107,7 +107,7 @@ return move
                   </th>
                 </tr>
                 <tr>
-                  <th colspan="2"><a className="naming" >ABILITIES:</a>
+                  <th colSpan="2"><a className="naming" >ABILITIES:</a>
                   <h2 className="stats">{this.pokemonAbilities(abilities)}</h2>
                   </th>
                 </tr>

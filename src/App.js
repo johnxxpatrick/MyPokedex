@@ -10,14 +10,18 @@ import pokedexx from './images/pokedex.png'
 import evolution from './images/pokemonevolution.gif'
 
 
-
 class App extends Component {
+
   state = {
     search: '',
     details: {},
     note: '',
     notes: []
   }
+  handleChange(prop,e){
+    this.setState({ [prop]: e.target.value})
+  }
+
   handleSave(e){
     var obj ={
       id : this.state.details.id,
@@ -28,19 +32,19 @@ class App extends Component {
       note : '' })
       const {details, note,notes} =this.state
   }
-  handleChange(prop,e){
-    console.log(prop)
-    this.setState({ [prop]: e.target.value})
-  }
 
   handleSearch(){
     const { search } = this.state
     var that = this
-    const url = 'http://pokeapi.co/api/v2/pokemon'
-    console.log('call api: ', this.state.search)
+    const url = 'https://pokeapi.co/api/v2/pokemon'
+    // console.log('call api: ', this.state.search)
     request.get(`${url}/${search}`)
       .end(function(err, res){
-        if(err) alert('error')
+
+        if(err){
+          console.log('error',err)
+          alert('error')
+        }
         that.setState({ details: res.body })
 
    })
@@ -58,7 +62,7 @@ class App extends Component {
           <div className="PokemonMain-Conatiner col-md-12">
             <img src={evolution} className="PokemonEvolution" alt="evolution" />
               <div className="PokemonSearch-Container col-md-5">
-                  <div className="select-type-pokemon-wrapper"> .
+                  <div className="select-type-pokemon-wrapper">
                   <div className="field">
                     <input type="text" placeholder="Enter Keyword"
                     onChange={this.handleChange.bind(this , 'search')} />
@@ -70,13 +74,17 @@ class App extends Component {
                   		<div className="dot"></div>
                   	</div>
                   </div>
-
                   <PokemonDetails details={this.state.details}/>
-                  <PokemonNotes notes={this.state.notes} save={this.handleSave}/>
-
+                  <PokemonNotes
+                    details={this.state.details}
+                    notes={this.state.notes}
+                    note={this.state.note}
+                    handleSave={this.handleSave.bind(this)}
+                    handleChange={this.handleChange.bind(this, 'note')}/>
               </div>
           </div>
       </div>
+
     );
   }
 }
